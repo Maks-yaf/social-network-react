@@ -13,6 +13,8 @@ const ProfileInfo = (props) => {
         <div>
             <div>
                 <h1>AHHAHAHAH</h1>
+                <h1>AHHAHAHAH</h1>
+                <h1>AHHAHAHAH</h1>
                 <img className={s.mainImg}
                      src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRieAeypWa5G63Ggeofo-8B4TzCjSJd-nyH8UDV3nwK-g&s'/>
             </div>
