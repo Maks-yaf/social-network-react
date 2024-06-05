@@ -1,0 +1,13 @@
+.div {
+    grid-area: h;
+    background-color: peru ;
+}
+
+.avatar img {
+   width: 80px;
+}
+
+.selectedPage {
+    margin: 5px;
+    color: red;
+}
