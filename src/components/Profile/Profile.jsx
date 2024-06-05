@@ -6,8 +6,6 @@ const Profile = (props) => {
 
     return (
         <div>
-            <h1>AHHAHAHAH</h1>
-            <h1>AHHAHAHAH</h1>
             <ProfileInfo profile={props.profile}
                          fullName={props.fullName}
                          description={props.description}
