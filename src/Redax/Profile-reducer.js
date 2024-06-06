@@ -1,11 +1,11 @@
 import {profileAPI, usersAPI} from "../API/Api";
 
-const ADD_POST = 'ADD_POST';
-const SET_USER_PROFILE = 'SET_USER_PROFILE';
-const SET_USER_FULLNAME='SET_USER_FULLNAME';
-const SET_USER_DESCRIPTION='SET_USER_DESCRIPTION';
-const SET_USER_STATUS='SET_USER_STATUS';
-const SET_USER_PHOTO='SET_USER_PHOTO';
+const ADD_POST = 'profilePage/ADD_POST';
+const SET_USER_PROFILE = 'profilePage/SET_USER_PROFILE';
+const SET_USER_FULLNAME='profilePage/SET_USER_FULLNAME';
+const SET_USER_DESCRIPTION='profilePage/SET_USER_DESCRIPTION';
+const SET_USER_STATUS='profilePage/SET_USER_STATUS';
+const SET_USER_PHOTO='profilePage/SET_USER_PHOTO';
 const DELETE_POST='DELETE_POST';
 
 let initialState = {
@@ -126,8 +126,14 @@ export const updatePhoto = (photo) => {
             });
     }
 }
-
-
+export const updateProfile = () => {
+    return (dispatch) => {
+        profileAPI.updateProfile()
+            .then( r => {
+                console.log(r.data)
+            });
+    }
+}
 
 export default profileReducer;
 

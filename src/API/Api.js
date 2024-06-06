@@ -40,6 +40,30 @@ export const profileAPI = {
     updatePhoto(photo){
         return instance.put(`profile/photo`, {image: photo});
     },
+    updateProfile() {
+        return instance.put(`profile`,
+            {
+                "aboutMe": "Эх было бы что сказать",
+                "contacts": {
+                    "facebook": "facebook.com",
+                    "website": null,
+                    "vk": "vk.com",
+                    "twitter": null,
+                    "instagram": null,
+                    "youtube": null,
+                    "github": null,
+                    "mainLink": null
+                },
+                "lookingForAJob": false,
+                "lookingForAJobDescription": "ForAJobDescription",
+                "fullName": "Max_yaf",
+                "userId": 31300,
+                "photos": {
+                    "small": "https://social-network.samuraijs.com/activecontent/images/users/31300/user-small.jpg?v=0",
+                    "large": "https://social-network.samuraijs.com/activecontent/images/users/31300/user.jpg?v=0"
+                }
+            });
+    },
 }
 
 

@@ -19,15 +19,15 @@ test('length of posts should be incremented', () => {
     //3. expectation
     expect(newState.posts.length).toBe(5);
 });
-test('message text of NewPost should be "maximilian" ', () => {
+test('message text of NewPost should be "NewPostText" ', () => {
     //1. test data
-    let action = addPostActionCreator("maximilian")
+    let action = addPostActionCreator("NewPostText")
 
     //2. action
     let newState = profileReducer (state, action)
 
     //3. expectation
-    expect(newState.posts[4].message).toBe("maximilian");
+    expect(newState.posts[4].message).toBe("NewPostText");
 });
 test('after deleting length of message should decrement', () => {
     //1. test data

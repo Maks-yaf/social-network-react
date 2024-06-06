@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "./Header";
 import {logout} from "../../Redax/Auth-reducer";
 import {connect} from "react-redux";
+import {updateProfile} from "../../Redax/Profile-reducer";
 
 class HeaderContainer extends React.Component {
 
@@ -10,7 +11,8 @@ class HeaderContainer extends React.Component {
                        login={this.props.login}
                        email={this.props.email}
 
-                       logout={this.props.logout}/>
+                       logout={this.props.logout}
+                       updateProfile={this.props.updateProfile}/>
     }
 }
 
@@ -20,4 +22,4 @@ let mapStateToProps = (state) => ({
     email: state.auth.email,
 });
 
-export default connect(mapStateToProps, {logout})(HeaderContainer);
+export default connect(mapStateToProps, {logout, updateProfile})(HeaderContainer);

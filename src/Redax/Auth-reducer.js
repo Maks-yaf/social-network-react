@@ -1,8 +1,8 @@
 import {authAPI} from "../API/Api";
 import {stopSubmit} from "redux-form";
 
-const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
-const SET_USER_DATA = "SET_USER_DATA";
+const TOGGLE_IS_FETCHING = "auth/TOGGLE_IS_FETCHING";
+const SET_USER_DATA = "auth/SET_USER_DATA";
 
 let initialState = {
     id: null,
