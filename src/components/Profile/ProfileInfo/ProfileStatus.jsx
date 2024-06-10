@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './ProfileStatus.module.css';
-import {updateStatus} from "../../../Redax/Profile-reducer";
 
 
 class ProfileStatus extends React.Component {

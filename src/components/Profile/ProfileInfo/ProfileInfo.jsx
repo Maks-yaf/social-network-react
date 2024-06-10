@@ -3,6 +3,7 @@ import s from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatusOnHooks from "./ProfileStatusOnHooks";
 import userPhoto from "../../../asets/images/defoltAvatar.png";
+import ProfileStatus from "./ProfileStatus";
 
 
 const ProfileInfo = (props) => {

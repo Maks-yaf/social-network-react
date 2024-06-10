@@ -4,15 +4,17 @@ import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, BrowserRouter} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {initializeApp} from "./Redax/App-reducer";
 import Preloader from "./components/Common/Preloader/Preloader";
+import store from "./Redax/Redax-store";
+
 
 class App extends React.Component {
     componentDidMount() {
@@ -55,8 +57,19 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized,
 })
 
-export default connect(mapStateToProps, {initializeApp})(App);
+let AppContainer = connect(mapStateToProps, {initializeApp})(App);
 
+let MainApp = (props) => {
+    return (
+    <BrowserRouter>
+        <Provider store={store}>
+            <AppContainer/>
+        </Provider>
+    </BrowserRouter>
+    )
+}
+
+export default MainApp
 // так же в  App.js
 //
 // <Route path="/profile" element={<ProfileContainer />}>

@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import s from './ProfileStatus.module.css';
-import {updateStatus} from "../../../Redax/Profile-reducer";
 
 
 const ProfileStatusOnHooks = (props) => {
