@@ -12,8 +12,8 @@ import {
     getCurrentPage,
     getFollowingInProgress,
     getIsFetching,
-    getPageSize,
-    getTotalUsersCount, getUsersReSelector
+    getPageSize, getPortionSize,
+    getTotalItemsCount, getUsersReSelector
 } from "../../Redax/Users-selectors";
 
 class UsersContainer extends React.Component {
@@ -30,11 +30,12 @@ class UsersContainer extends React.Component {
     render() {
         return (<>
                 {this.props.isFetching ? <Preloader/> : null}
-                <Users totalUsersCount={this.props.totalUsersCount}
+                <Users totalItemsCount={this.props.totalItemsCount}
                        pageSize={this.props.pageSize}
                        currentPage={this.props.currentPage}
                        users={this.props.users}
                        followingInProgress={this.props.followingInProgress}
+                       portionSize={this.props.portionSize}
 
                        onPageChanged={this.onPageChanged}
                        unfollow={this.props.unfollow}
@@ -59,10 +60,11 @@ const mapStateToProps = (state) => {
     return {
         users: getUsersReSelector(state),
         pageSize: getPageSize(state),
-        totalUsersCount: getTotalUsersCount(state),
+        totalItemsCount: getTotalItemsCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
         followingInProgress: getFollowingInProgress(state),
+        portionSize: getPortionSize(state)
     }
 }
 

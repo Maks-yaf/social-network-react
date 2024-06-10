@@ -5,5 +5,19 @@
 
 .selectedPage {
     margin: 5px;
-    color: red;
+    color: gold;
+    padding: 1px;
+    border: 1px solid grey;
+}
+
+.paginator {
+    margin: 10px;
+}
+
+button {
+   margin: 5px;
+}
+
+.pageNumber {
+    padding: 1px;
 }

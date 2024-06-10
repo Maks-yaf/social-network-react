@@ -4,7 +4,7 @@ const FOLLOW = "usersPage/FOLLOW";
 const UNFOLLOW = "usersPage/UNFOLLOW";
 const SET_USERS = "usersPage/SET_USERS";
 const SET_CURRENT_PAGE = "usersPage/SET_CURRENT_PAGE";
-const SET_TOTAL_USERS_COUNT = "usersPage/SET_TOTAL_USERS_COUNT";
+const SET_TOTAL_ITEMS_COUNT = "usersPage/SET_TOTAL_ITEMS_COUNT";
 const TOGGLE_IS_FETCHING = "usersPage/TOGGLE_IS_FETCHING";
 const TOGGLE_IS_FOLLOWING_IN_PROGRESS = "usersPage/TOGGLE_IS_FOLLOWING_IN_PROGRESS";
 
@@ -52,11 +52,11 @@ let initialState = {
         // },
     ],
     pageSize: 100,
-    totalUsersCount: 1,
+    totalItemsCount: 1,
     currentPage: 1,
     isFetching: true,
     followingInProgress: [],
-    fake: 10,
+    portionSize: 25,
 }
 
 
@@ -95,10 +95,10 @@ const UsersReducer = (state = initialState, action) => {
                 currentPage: action.currentPage
             }
         }
-        case SET_TOTAL_USERS_COUNT: {
+        case SET_TOTAL_ITEMS_COUNT: {
             return {
                 ...state,
-                totalUsersCount: action.totalUsersCount
+                totalItemsCount: action.totalItemsCount
             }
         }
         case TOGGLE_IS_FETCHING: {
@@ -125,7 +125,7 @@ const followSeccess = (userID) => ({type: FOLLOW, userID});
 const unfollowSeccess = (userID) => ({type: UNFOLLOW, userID})
 const setUsers = (users) => ({type: SET_USERS, users})
 const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
-const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount})
+const setTotalItemsCount = (totalItemsCount) => ({type: SET_TOTAL_ITEMS_COUNT, totalItemsCount})
 const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 const toggleFollowingProgress = (isFetching, userID) => ({
     type: TOGGLE_IS_FOLLOWING_IN_PROGRESS,
@@ -141,7 +141,7 @@ export const getUsersData = (currentPage, pageSize) => {
         let data = await usersAPI.getUsers(currentPage, pageSize)
         dispatch(toggleIsFetching(false))
         dispatch(setUsers(data.items))
-        dispatch(setTotalUsersCount(data.totalCount))
+        dispatch(setTotalItemsCount(data.totalCount))
     }
 }
 export const unfollow = (userID) => {

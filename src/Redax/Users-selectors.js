@@ -12,8 +12,8 @@ export const getPageSize = (state) => {
     return state.usersPage.pageSize;
 }
 
-export const getTotalUsersCount = (state) => {
-    return state.usersPage.totalUsersCount;
+export const getTotalItemsCount = (state) => {
+    return state.usersPage.totalItemsCount;
 }
 
 export const getCurrentPage = (state) => {
@@ -26,6 +26,10 @@ export const getIsFetching = (state) => {
 
 export const getFollowingInProgress = (state) => {
     return state.usersPage.followingInProgress;
+}
+
+export const getPortionSize = (state) => {
+    return state.usersPage.portionSize;
 }
 
 

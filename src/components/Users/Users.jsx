@@ -7,10 +7,11 @@ const Users = (props) => {
     return (
         <div>
             <div>
-                <Paginator totalUsersCount={props.totalUsersCount}
+                <Paginator totalItemsCount={props.totalItemsCount}
                            pageSize={props.pageSize}
                            currentPage={props.currentPage}
-                           onPageChanged={props.onPageChanged}/>
+                           onPageChanged={props.onPageChanged}
+                           portionSize={props.portionSize}/>
             </div>
             <div>
                 {props.users.map(user => <User user={user}
