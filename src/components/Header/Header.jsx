@@ -1,10 +1,8 @@
 import React from 'react';
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
-import {updateProfile} from "../../Redax/Profile-reducer";
 
 const Header = (props) => {
-    debugger;
     return <header className={s.header}>
         <img
             src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS390_-9qtkRsXJX3B5a3Shbnk3zM3FYQRXXlTh_3p722ZbwrJcJZaQq9N0xJCOjGuvPeA&usqp=CAU'>
