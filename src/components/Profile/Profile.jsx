@@ -10,8 +10,11 @@ const Profile = (props) => {
                          fullName={props.fullName}
                          description={props.description}
                          status={props.status}
+                         isOwnerID={props.isOwnerID}
+                         userPageId={props.userPageId}
 
                          updateStatus={props.updateStatus}
+                         updatePhoto={props.updatePhoto}
 
 
             />

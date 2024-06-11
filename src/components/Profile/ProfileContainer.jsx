@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getStatus, profileInfo, updateStatus} from "../../Redax/Profile-reducer";
+import {getStatus, profileInfo, updatePhoto, updateStatus} from "../../Redax/Profile-reducer";
 import {useParams} from 'react-router-dom'
 import {compose} from "redux";
 
@@ -14,11 +14,11 @@ function ProfileContainer(props) {
         }
     }
 
+
     useEffect(() => {props.profileInfo(userId)},  [userId]);
-    props.getStatus(userId);
+    useEffect(() => {props.getStatus(userId)}, [userId]);
 
 
-    // console.log("RENDER PROFILE")
     return (
         <>
         <div>
@@ -26,8 +26,12 @@ function ProfileContainer(props) {
                      fullName={props.fullName}
                      description={props.description}
                      status={props.status}
+                     isOwnerID={props.authUserId}
+                     userPageId={userId}
 
                      updateStatus={props.updateStatus}
+                     updatePhoto={props.updatePhoto}
+
             />
         </div>
         </>
@@ -35,7 +39,6 @@ function ProfileContainer(props) {
 }
 
 let mapStateToProps = (state) => {
-    // console.log("MapStateToPropsProfile PROFILE")
     return ( {
                  profile: state.profilePage.profile,
                  fullName: state.profilePage.fullName,
@@ -48,6 +51,6 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {profileInfo, getStatus, updateStatus}),
+    connect(mapStateToProps, {profileInfo, getStatus, updateStatus, updatePhoto}),
 )(ProfileContainer)
 

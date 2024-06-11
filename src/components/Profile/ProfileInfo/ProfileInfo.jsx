@@ -10,6 +10,13 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
+
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            props.updatePhoto(e.target.files[0]);
+        }
+    }
+
     return (
         <div>
             <div>
@@ -17,7 +24,10 @@ const ProfileInfo = (props) => {
                      src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRieAeypWa5G63Ggeofo-8B4TzCjSJd-nyH8UDV3nwK-g&s'/>
             </div>
             <div className={s.avatar}>
-                <img src={props.profile.photos.small !== null ? props.profile.photos.small : userPhoto}  alt='profile'/>
+                <img src={props.profile.photos.large || userPhoto}  alt='profile'/>
+                <div>
+                    {props.isOwnerID === props.userPageId ? <input type={"file"} onChange={onMainPhotoSelected}/> : null}
+                </div>
                 <div className={s.discriptionBlock}><u>{props.fullName}</u></div>
                 <div className={s.discriptionBlock}>{props.description}</div>
                 <ProfileStatusOnHooks status={props.status} updateStatus={props.updateStatus}/>
