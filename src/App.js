@@ -30,7 +30,6 @@ class App extends React.Component {
 
         return (
             <div className='app-wrapper'>
-                123ed123e1wf
                 <HeaderContainer/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
@@ -66,7 +65,7 @@ let AppContainer = connect(mapStateToProps, {initializeApp})(App);
 
 let MainApp = (props) => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Provider store={store}>
                 <AppContainer/>
             </Provider>
