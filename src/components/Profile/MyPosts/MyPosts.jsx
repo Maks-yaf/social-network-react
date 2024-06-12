@@ -6,7 +6,9 @@ import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
 import {Textarea} from "../../Common/FormsControls/FormsControls";
 
 const MyPosts =props => {
-    let postsElement = [...props.posts].reverse().map((p) => <AddPost message={p.message} like={p.like} key={p.id}/>)
+    let postsElement = [...props.posts]
+        .reverse()
+        .map((p) => <AddPost key={p.id} message={p.message} like={p.like} key={p.id}/>)
 
     let onAddPost = (values) => {
         props.addPost(values.postTextArea);

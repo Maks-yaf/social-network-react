@@ -12,7 +12,6 @@ const Header = (props) => {
             {props.isAuth ? props.login : <NavLink to={"/login"}>Login</NavLink>}
             <div>{props.isAuth ? props.email : null}</div>
             <div>{props.isAuth ? <button onClick={props.logout}>Log out</button> : null}</div>
-            <button onClick={props.updateProfile}>UpdateProfile</button>
         </div>
 
     </header>

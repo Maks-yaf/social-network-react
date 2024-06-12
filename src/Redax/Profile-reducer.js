@@ -1,9 +1,8 @@
 import {profileAPI, usersAPI} from "../API/Api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = 'profilePage/ADD_POST';
 const SET_USER_PROFILE = 'profilePage/SET_USER_PROFILE';
-const SET_USER_FULLNAME='profilePage/SET_USER_FULLNAME';
-const SET_USER_DESCRIPTION='profilePage/SET_USER_DESCRIPTION';
 const SET_USER_STATUS='profilePage/SET_USER_STATUS';
 const SET_USER_PHOTO='profilePage/SET_USER_PHOTO';
 const DELETE_POST='DELETE_POST';
@@ -16,8 +15,6 @@ let initialState = {
         {id: 4, message: "ohohohooh", like: 1123},
     ],
     profile: null,
-    fullName: "FullName",
-    description: "Description",
     status: "Условная пустота",
 
 };
@@ -47,18 +44,6 @@ const profileReducer = (state = initialState, action) => {
                 profile: action.profile,
             };
         }
-        case SET_USER_FULLNAME: {
-            return {
-                ...state,
-                fullName: action.fullName,
-            };
-        }
-        case SET_USER_DESCRIPTION: {
-            return {
-                ...state,
-                description: action.description,
-            };
-        }
         case SET_USER_STATUS: {
             return {
                 ...state,
@@ -79,8 +64,6 @@ const profileReducer = (state = initialState, action) => {
 ///ActionCreator
 export const addPostActionCreator = (postTextArea) => ({type: ADD_POST, postTextArea})
 const  setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
-const  setUserFullName = (fullName) => ({type: SET_USER_FULLNAME, fullName})
-const setUserDescription = (description) => ({type: SET_USER_DESCRIPTION, description})
 const setUserStatus = (status) => ({type: SET_USER_STATUS, status})
 const setUserPhoto = (file) => ({type: SET_USER_PHOTO, file})
 export const deletePost = (postId) => ({type: DELETE_POST, postId})
@@ -90,8 +73,6 @@ export const deletePost = (postId) => ({type: DELETE_POST, postId})
 export const profileInfo = (userID) => async (dispatch) => {
         let data = await usersAPI.getProfileInfo(userID)
                 dispatch(setUserProfile(data))
-                dispatch(setUserFullName(data.fullName))
-                dispatch(setUserDescription(data.aboutMe))
     }
 export const getStatus = (userId) => async (dispatch) => {
        let data = await profileAPI.getStatus(userId)
@@ -109,12 +90,16 @@ export const updatePhoto = (file) => async (dispatch) => {
         dispatch(setUserPhoto(data.photos))
     }
 }
-export const updateProfile = () => (dispatch) => {
-        profileAPI.updateProfile()
-            .then( r => {
-                console.log(r.data)
-            });
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const userID = getState().auth.id
+    const data = await profileAPI.saveProfile(profile)
+    if (data.resultCode === 0) {
+        dispatch(profileInfo(userID))
+    } else {
+        dispatch(stopSubmit("edit-profile", {_error: data.messages[0]}))
+        return Promise.reject(data.messages[0])
     }
+}
 
 export default profileReducer;
 

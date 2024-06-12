@@ -34,7 +34,6 @@ const LoginForm = (props) => {
             </div>}
             <div>
                 <button type='submit'>LOGIN</button>
-                <button type='submit'>LOGOUT</button>
             </div>
         </form>
     )

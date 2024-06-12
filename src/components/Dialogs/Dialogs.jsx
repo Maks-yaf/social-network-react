@@ -21,6 +21,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <div>{messageElements}</div>
+                <b> Enter Message </b>
                 <DialogsFormRedux onSubmit={addNewMessage}/>
             </div>
         </div>
