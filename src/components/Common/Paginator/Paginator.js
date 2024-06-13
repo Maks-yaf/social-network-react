@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import s from './Paginator.module.css';
+import cn from "classnames"
 
 const Paginator = (props) => {
 
@@ -16,7 +17,7 @@ const Paginator = (props) => {
     let rightPortionPageNumber = portionNumber * props.portionSize;
 
     return (
-        <div className={s.paginator}>
+        <div className={cn(s.paginator, s.test)}>
             {portionNumber > 1 &&
             <button onClick={ () => {setPortionNumber(portionNumber-1)}}>Back</button>}
             {pages

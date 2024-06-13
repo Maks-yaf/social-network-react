@@ -14,25 +14,27 @@ function ProfileContainer(props) {
         }
     }
 
-
-    useEffect(() => {props.profileInfo(userId)},  [userId]);
-    useEffect(() => {props.getStatus(userId)}, [userId]);
-
+    useEffect(() => {
+        props.profileInfo(userId)
+    }, [userId]);
+    useEffect(() => {
+        props.getStatus(userId)
+    }, [userId]);
 
     return (
         <>
-        <div>
-            <Profile profile={props.profile}
-                     status={props.status}
-                     isOwnerID={props.authUserId}
-                     userPageId={userId}
+            <div>
+                <Profile profile={props.profile}
+                         status={props.status}
+                         isOwnerID={props.authUserId}
+                         userPageId={userId}
 
-                     updateStatus={props.updateStatus}
-                     updatePhoto={props.updatePhoto}
-                     saveProfile={props.saveProfile}
+                         updateStatus={props.updateStatus}
+                         updatePhoto={props.updatePhoto}
+                         saveProfile={props.saveProfile}
 
-            />
-        </div>
+                />
+            </div>
         </>
     );
 }
@@ -48,6 +50,8 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {profileInfo, getStatus, updateStatus, updatePhoto, saveProfile}),
+    connect(mapStateToProps,
+        {profileInfo, getStatus, updateStatus, updatePhoto, saveProfile}
+    ),
 )(ProfileContainer)
 
