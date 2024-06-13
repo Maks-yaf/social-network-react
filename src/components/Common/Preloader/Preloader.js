@@ -1,4 +1,4 @@
-import LoadingGif from "../../../asets/images/Loadibg-gif.gif";
+import LoadingGif from "../../../assets/images/Loadibg-gif.gif";
 import React from "react";
 
 let Preloader = (props) => {

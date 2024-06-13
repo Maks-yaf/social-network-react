@@ -37,7 +37,6 @@ const PostForm = (props) => {
             </div>
             <div>
                 <button type='submit'>Add post</button>
-                <button type='submit'>Remove</button>
             </div>
         </form>
     )

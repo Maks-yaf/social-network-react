@@ -4,9 +4,9 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Navbar from "./components/Navbar/Navbar";
 import {Routes, Route, HashRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
-import {initializeApp} from "./Redax/App-reducer";
+import {initializeApp} from "./Redux/App-reducer";
 import Preloader from "./components/Common/Preloader/Preloader";
-import store from "./Redax/Redax-store";
+import store from "./Redux/Redax-store";
 
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));

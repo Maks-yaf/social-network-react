@@ -4,7 +4,7 @@ import {
     follow,
     unfollow,
     getUsersData,
-} from "../../Redax/Users-reducer";
+} from "../../Redux/Users-reducer";
 import Users from "./Users";
 import Preloader from "../Common/Preloader/Preloader";
 import {compose} from "redux";
@@ -14,7 +14,7 @@ import {
     getIsFetching,
     getPageSize, getPortionSize,
     getTotalItemsCount, getUsersReSelector
-} from "../../Redax/Users-selectors";
+} from "../../Redux/Users-selectors";
 
 class UsersContainer extends React.Component {
 

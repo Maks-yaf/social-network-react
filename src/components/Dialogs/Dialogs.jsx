@@ -39,8 +39,7 @@ const dialogsForm = (props) => {
                 />
             </div>
             <div>
-                <button type='submit'>Add Message</button>
-                <button type='submit'>Remove</button>
+                <button type='submit'>Send Message</button>
             </div>
         </form>
     )

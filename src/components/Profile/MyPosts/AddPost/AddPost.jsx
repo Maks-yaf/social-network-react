@@ -7,7 +7,7 @@ const AddPost = (props) => {
             <img src="https://img.freepik.com/premium-photo/cute-asian-girl-kawaii-anime-avatar-ai-generative-art_225753-9233.jpg" ></img>
             {props.message}
             <div className={s.like}>
-                like bitch {props.like}
+                like {props.like}
             </div>
         </div>
     )

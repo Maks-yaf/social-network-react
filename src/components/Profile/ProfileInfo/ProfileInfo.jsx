@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatusOnHooks from "./ProfileStatusOnHooks";
-import userPhoto from "../../../asets/images/defoltAvatar.png";
+import userPhoto from "../../../assets/images/defoltAvatar.png";
 import ProfileStatus from "./ProfileStatus";
 import ProfileChangeForm from "./ProfileChangeForm";
 

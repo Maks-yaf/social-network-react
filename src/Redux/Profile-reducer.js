@@ -11,8 +11,8 @@ let initialState = {
     posts: [
         {id: 1, message: "Hi, How are you", like: 15},
         {id: 2, message: "Hi, it's my first post", like: 10},
-        {id: 3, message: "412412", like: 123},
-        {id: 4, message: "ohohohooh", like: 1123},
+        {id: 3, message: "go go go", like: 123},
+        {id: 4, message: "All be good", like: 1123},
     ],
     profile: null,
     status: "Условная пустота",
