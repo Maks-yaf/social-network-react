@@ -10,7 +10,7 @@ function ProfileContainer(props) {
     if (!userId) {
         userId = props.authUserId;
         if (!userId) {
-            window.location.href = '/login';
+            userId = 31300 ;
         }
     }
 

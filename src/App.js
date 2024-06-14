@@ -2,7 +2,7 @@ import React, {Suspense} from 'react';
 import './App.css';
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Navbar from "./components/Navbar/Navbar";
-import {Routes, Route, HashRouter, Navigate} from "react-router-dom";
+import {Routes, Route, HashRouter, Navigate, BrowserRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
 import {initializeApp} from "./Redux/App-reducer";
 import Preloader from "./components/Common/Preloader/Preloader";

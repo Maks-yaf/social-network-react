@@ -70,16 +70,3 @@ export const securityAPI = {
     },
 }
 
-//Было в уроке 63... На что мы заменяли
-// axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
-//     withCredentials: true,
-//     headers: {
-//         "API-KEY": "1afcb89f-5cbe-4acc-8784-8be4344ca6c0"
-//     }
-// })
-//     .then(response => {
-//         if (response.data.resultCode === 0) {
-//             props.unfollow(user.id)
-//         }
-//     });
-
