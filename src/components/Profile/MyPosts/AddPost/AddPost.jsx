@@ -1,11 +1,15 @@
 import React from 'react';
 import s from './AddPost.module.css';
+import userPhoto from "../../../../assets/images/defoltAvatar.png";
 
 const AddPost = (props) => {
     return (
         <div className={s.item}>
-            <img src="https://img.freepik.com/premium-photo/cute-asian-girl-kawaii-anime-avatar-ai-generative-art_225753-9233.jpg" ></img>
-            {props.message}
+            <img
+                src={
+                // props.profile.photos.large ||
+                    userPhoto} alt='profile'></img>
+            <div>{props.message}</div>
             <div className={s.like}>
                 like {props.like}
             </div>

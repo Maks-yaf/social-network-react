@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Users.module.css';
 import userPhoto from '../../assets/images/defoltAvatar.png'
 import {NavLink} from "react-router-dom";
+import {Button} from "@mui/material";
 
 const User = (props) => {
     return (
@@ -15,14 +16,18 @@ const User = (props) => {
                 <div>
                     {
                         props.user.followed
-                            ? <button disabled={props.followingInProgress.some(id => id === props.user.id)}
+                            ? <Button disabled={props.followingInProgress.some(id => id === props.user.id)}
                                       onClick={() => {
                                           props.unfollow(props.user.id);
-                                      }}>Unfollow</button>
-                            : <button disabled={props.followingInProgress.some(id => id === props.user.id)}
+                                      }}
+                                      variant="contained"
+                                      size="small">Unfollow</Button>
+                            : <Button disabled={props.followingInProgress.some(id => id === props.user.id)}
                                       onClick={() => {
                                           props.follow(props.user.id);
-                                      }}>Follow</button>
+                                      }}
+                                      variant="contained"
+                                      size="small">Follow</Button>
                     }
                 </div>
             </span>
@@ -30,10 +35,6 @@ const User = (props) => {
                 <span>
                     <div>{props.user.name}</div>
                     <div>{props.user.status}</div>
-                </span>
-                <span>
-                    <div>{"user.location.city"}</div>
-                    <div>{"user.location.country"}</div>
                 </span>
             </span>
         </div>

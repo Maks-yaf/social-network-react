@@ -15,6 +15,7 @@ let initialState = {
         {id: 4, message: "All be good", like: 1123},
     ],
     profile: null,
+    photos: null,
     status: "Условная пустота",
 
 };
@@ -106,13 +107,3 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
 }
 
 export default profileReducer;
-
-/// useEffect(() => {
-//     axios
-//         .get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId)
-//         .then((response) => {
-//             props.setUserProfile(response.data)
-//             props.setUserFullName(response.data.fullName)
-//             props.setUserDescription(response.data.aboutMe)
-//         });
-// }, [userId]);

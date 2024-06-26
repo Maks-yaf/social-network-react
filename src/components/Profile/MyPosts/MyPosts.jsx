@@ -5,11 +5,12 @@ import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
 import {Textarea} from "../../Common/FormsControls/FormsControls";
 import {Button} from "@mui/material";
+import userPhoto from "../../../assets/images/defoltAvatar.png";
 
 const MyPosts =props => {
-    let postsElement = [...props.posts]
+    let postsElement = [...props.posts,]
         .reverse()
-        .map((p) => <AddPost key={p.id} message={p.message} like={p.like}/>)
+        .map((p) => <AddPost key={p.id} message={p.message} like={p.like} profile={props.profile} />)
 
     let onAddPost = (values) => {
         props.addPost(values.postTextArea);
@@ -19,6 +20,7 @@ const MyPosts =props => {
 
         <div className={s.postBlock}>
             <h4> My post </h4>
+            {/*<img src={props.profile.photos.large || userPhoto} alt='profile'/>*/}
             <PostFormRedux onSubmit={onAddPost}/>
             <div className={s.posts}>
                 {postsElement}

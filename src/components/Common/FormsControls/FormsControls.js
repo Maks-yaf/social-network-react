@@ -2,7 +2,8 @@ import React from 'react';
 import s from "./FormsControls.module.css"
 import {Field} from "redux-form";
 import {TextField} from "@mui/material";
-import Box from '@mui/material/Box';
+import Box from '@mui/material/Box'
+import Input from '@mui/material/Input';
 
 
 export const FormControl = ({input, meta, ...props}) => {
@@ -39,9 +40,13 @@ export const Textarea = (props) => {
     </FormControl>
 }
 
-export const Input = (props) => {
+export const Inputarea = (props) => {
     const {input, meta, ...restProps} = props
-    return <FormControl {...props}> <input {...input} {...restProps} /></FormControl>
+    return <FormControl {...props}>
+
+        <input {...input} {...restProps} />
+
+    </FormControl>
 }
 
 export const createField = (placeholder, name, validate, component, props = {}, text = "" ) => {

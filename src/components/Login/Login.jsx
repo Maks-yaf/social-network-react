@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
-import {Input} from "../Common/FormsControls/FormsControls";
+import {Inputarea} from "../Common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../Utils/Validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../Redux/Auth-reducer";
@@ -13,14 +13,14 @@ const LoginForm = (props) => {
             <div>
                 <Field name={'email'}
                        placeholder={'email'}
-                       component={Input}
+                       component={Inputarea}
                        validate={[required, maxLengthCreator(50)]}/>
             </div>
             <div>
                 <Field name={'password'}
                        placeholder={'password'}
                        type={'password'}
-                       component={Input}
+                       component={Inputarea}
                        validate={[required, maxLengthCreator(50)]}/>
             </div>
             <div>
@@ -35,7 +35,7 @@ const LoginForm = (props) => {
                 && <div>
                 <Field name={'captcha'}
                        placeholder={'Symbols from image'}
-                       component={Input}
+                       component={Inputarea}
                        validate={[required, maxLengthCreator(10)]}/>
             </div>}
             {props.error && <div className={s.formSummaryError}>

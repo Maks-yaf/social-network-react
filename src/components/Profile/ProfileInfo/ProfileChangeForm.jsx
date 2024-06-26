@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import s from './ProfileInfo.module.css';
-import {createField, Input, Textarea} from "../../Common/FormsControls/FormsControls";
+import {createField, Inputarea, Textarea} from "../../Common/FormsControls/FormsControls";
 import {reduxForm} from "redux-form";
 import style from '../../Common/FormsControls/FormsControls.module.css';
+import {Button} from "@mui/material";
 
 const ProfileChangeFrom = (props) => {
     return (
@@ -14,11 +15,11 @@ const ProfileChangeFrom = (props) => {
                 <u>Change Profile:</u>
             </div>
             <div>
-                <b>My nickname:</b> {createField("My nickname", "fullName", [], Input)}
+                <b>My nickname:</b> {createField("My nickname", "fullName", [], Inputarea)}
             </div>
             <div>
                 <b>Looking for a job</b>
-                {createField("", "lookingForAJob", [], Input, {type: "checkbox"})}
+                {createField("", "lookingForAJob", [], Inputarea, {type: "checkbox"})}
             </div>
             <div>
                 <b>My professional skills:</b> {props.profile.lookingForAJobDescription}
@@ -32,14 +33,20 @@ const ProfileChangeFrom = (props) => {
                 <b>Contacts:</b> {Object.keys(props.profile.contacts).map(key => {
                 return (
                     <div key={key} className={s.contacts}>
-                        <b>{key}:</b> {createField(key, "contacts." + key, [], Input)}
+                        <b>{key}:</b> {createField(key, "contacts." + key, [], Inputarea)}
                     </div>
                 )
             })}
             </div>
             <div>
-                <button onClick={() => {}}>Save
-                </button>
+                <Button
+                    onClick={() => {}}
+                    color="primary"
+                    size="small"
+                    variant="contained">
+                    Save
+                </Button>
+                <button onClick={() => {}}>Save default</button>
             </div>
         </form>
     )

@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import s from './ProfileStatus.module.css';
+import {Input} from "@mui/material";
+import Box from "@mui/material/Box";
 
 const ProfileStatusOnHooks = (props) => {
 
@@ -34,11 +36,11 @@ const ProfileStatusOnHooks = (props) => {
             }
             {editMode &&
                 <div>
-                    <input autoFocus={true}
+                    <Input autoFocus={true}
                            onChange={onStatusChange}
                            onBlur={deactivateEditMode}
                            value={status}
-                           />
+                    />
                 </div>
             }
             </div>

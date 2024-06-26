@@ -5,6 +5,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import {Field, reduxForm} from "redux-form";
 import {Textarea} from "../Common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../Utils/Validators/validators";
+import {Button} from "@mui/material";
 
 const Dialogs = (props) => {
     let dialogsElements = props.dialogs.map((d) => <DialogItem name={d.name} key={d.id} id={d.id}/>)
@@ -39,7 +40,12 @@ const dialogsForm = (props) => {
                 />
             </div>
             <div>
-                <button type='submit'>Send Message</button>
+                <Button
+                    type='submit'
+                    variant="contained"
+                    size="small"
+                >Send Message
+                </Button>
             </div>
         </form>
     )
