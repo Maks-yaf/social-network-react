@@ -4,11 +4,12 @@ import AddPost from "./AddPost/AddPost";
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
 import {Textarea} from "../../Common/FormsControls/FormsControls";
+import {Button} from "@mui/material";
 
 const MyPosts =props => {
     let postsElement = [...props.posts]
         .reverse()
-        .map((p) => <AddPost key={p.id} message={p.message} like={p.like} key={p.id}/>)
+        .map((p) => <AddPost key={p.id} message={p.message} like={p.like}/>)
 
     let onAddPost = (values) => {
         props.addPost(values.postTextArea);
@@ -17,7 +18,7 @@ const MyPosts =props => {
     return (
 
         <div className={s.postBlock}>
-            <h3> My post </h3>
+            <h4> My post </h4>
             <PostFormRedux onSubmit={onAddPost}/>
             <div className={s.posts}>
                 {postsElement}
@@ -33,10 +34,17 @@ const PostForm = (props) => {
                 <Field name={'postTextArea'}
                        component={Textarea}
                        placeholder={"Hi, how are you"}
-                       validate={[required, maxLengthCreator(10)]}/>
+                       validate={[required, maxLengthCreator(50)]}/>
             </div>
             <div>
-                <button type='submit'>Add post</button>
+                <Button
+                    color="primary"
+                    size="small"
+                    variant="contained"
+                    type='submit'
+                >
+                    Add post
+                </Button>
             </div>
         </form>
     )
@@ -47,22 +55,4 @@ const PostFormRedux = reduxForm({form: "post"})(PostForm)
 
 export default MyPosts;
 
-// Старый и новый код для форм
-// <h3> My post </h3>
-// <div>
-//     <div>
-//                     <textarea onChange={onPostChange}
-//                               ref={newPostElement}
-//                               value={props.newPostText}/>
-//     </div>
-//     <div>
-//         <button onClick={onAddPost}>Add post</button>
-//         <button>Remove</button>
-//     </div>
-// </div>
-//
-// <PostForm onAddPost={onAddPost}
-//       onPostChange={onPostChange}
-//       newPostText={props.newPostText}
-//       newPostElement={newPostElement}
-// />
+

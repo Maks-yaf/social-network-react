@@ -4,6 +4,9 @@ import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatusOnHooks from "./ProfileStatusOnHooks";
 import userPhoto from "../../../assets/images/defoltAvatar.png";
 import ProfileChangeForm from "./ProfileChangeForm";
+import {Button} from "@mui/material";
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import {styled} from '@mui/material/styles';
 
 
 const ProfileInfo = (props) => {
@@ -27,6 +30,18 @@ const ProfileInfo = (props) => {
         )
     }
 
+    const VisuallyHiddenInput = styled('input')({
+        clip: 'rect(0 0 0 0)',
+        clipPath: 'inset(50%)',
+        height: 1,
+        overflow: 'hidden',
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        whiteSpace: 'nowrap',
+        width: 1,
+    });
+
     return (
         <div>
             <div>
@@ -35,10 +50,23 @@ const ProfileInfo = (props) => {
             </div>
             <div className={s.avatar}>
                 <img src={props.profile.photos.large || userPhoto} alt='profile'/>
-                <div>
-                    {props.isOwnerID === props.userPageId ?
-                        <input type={"file"} onChange={onMainPhotoSelected}/> : null}
+                <div> {props.isOwnerID === props.userPageId
+                    ? <Button
+                        size="small"
+                        onChange={onMainPhotoSelected}
+                        component="label"
+                        role={undefined}
+                        variant="contained"
+                        tabIndex={-1}
+                        startIcon={<CloudUploadIcon/>}
+                    >
+                        Upload file
+                        <VisuallyHiddenInput type="file"/>
+                    </Button>
+                    : null}
                 </div>
+
+
                 {editMode
                     ? <ProfileChangeForm initialValues={props.profile}
                                          profile={props.profile}
@@ -47,7 +75,9 @@ const ProfileInfo = (props) => {
                     : <ProfileDescription profile={props.profile}
                                           isOwnerID={props.isOwnerID}
                                           userPageId={props.userPageId}
-                                          goToEditMode={ () => {setEditMode(true)}}
+                                          goToEditMode={() => {
+                                              setEditMode(true)
+                                          }}
                     />}
                 <ProfileStatusOnHooks status={props.status} updateStatus={props.updateStatus}/>
             </div>
@@ -94,7 +124,15 @@ const ProfileDescription = (props) => {
                 }
             </div>
             {props.isOwnerID === props.userPageId
-                ? <div> <button onClick={props.goToEditMode}> Edit Description </button> </div>
+                ? <div>
+                    <Button
+                        color="primary"
+                        size="small"
+                        variant="contained"
+                        onClick={props.goToEditMode}
+                    > Edit Description
+                    </Button>
+                </div>
                 : null
             }
         </div>

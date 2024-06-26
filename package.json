@@ -4,7 +4,14 @@
   "private": true,
   "homepage": "https://maks-yaf.github.io/social-network-react",
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/roboto": "^5.0.13",
+    "@mui/icons-material": "^5.15.20",
+    "@mui/material": "^5.15.20",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@testing-library/user-event": "^13.5.0",
+    "@types/redux-form": "^8.3.11",
     "axios": "^1.7.1",
     "classnames": "^2.5.1",
     "gh-pages": "^6.1.1",
@@ -17,6 +24,7 @@
     "redux-form": "^8.3.10",
     "redux-thunk": "^3.1.0",
     "reselect": "^5.1.1",
+    "styled-components": "^6.1.11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
