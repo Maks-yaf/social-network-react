@@ -4,9 +4,9 @@ let initialState = {
     messages: [
         {id: 1, message: "Hi"},
         {id: 2, message: "How is your day?"},
-        {id: 3, message: "You"},
-        {id: 4, message: "You"},
-        {id: 5, message: "You"},
+        {id: 3, message: "I think you cool"},
+        {id: 4, message: "Good morning"},
+        {id: 5, message: "What's up"},
     ],
     dialogs: [
         {id: 1, name: "Max"},

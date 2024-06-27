@@ -10,7 +10,7 @@ const User = (props) => {
             <span>
                 <div className={s.avatar}>
                     <NavLink to={`/profile/` + props.user.id}>
-                        <img src={props.user.photos.small || userPhoto}/>
+                        <img className={s.userAvatar} src={props.user.photos.small || userPhoto}/>
                     </NavLink>
                 </div>
                 <div>
@@ -32,10 +32,10 @@ const User = (props) => {
                 </div>
             </span>
             <span>
-                <span>
-                    <div>{props.user.name && <div>Nickname: {props.user.name}</div>}</div>
-                    <div>{props.user.status && <div>Status: {props.user.status}</div>}</div>
-                    <div>{props.user.id && <div>Personal UserId: {props.user.id}</div>}</div>
+                <span className={s.text}>
+                    {props.user.name && <div><h7>Nickname:</h7> {props.user.name}</div>}
+                    {props.user.status && <div><h7>Status:</h7> {props.user.status}</div>}
+                    {props.user.id && <div><h7>Personal UserId:</h7> {props.user.id}</div>}
                 </span>
             </span>
         </div>

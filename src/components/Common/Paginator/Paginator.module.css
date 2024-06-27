@@ -5,7 +5,7 @@
 
 .selectedPage {
     margin: 5px;
-    color: gold;
+    color: #67b7f7;
     padding: 1px;
     border: 1px solid grey;
 }
@@ -23,5 +23,5 @@ button {
 }
 
 .test {
-    background-color: rgb( 212,175,55, 0.2)
+    color: white
 }

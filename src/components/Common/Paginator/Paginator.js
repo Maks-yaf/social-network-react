@@ -32,6 +32,7 @@ const Paginator = (props) => {
                         {p}
                         </span>
             })}
+
             {portionCount > portionNumber &&
                 <Button onClick={ () => {setPortionNumber(portionNumber+1)}}>Forward</Button>}
         </div>

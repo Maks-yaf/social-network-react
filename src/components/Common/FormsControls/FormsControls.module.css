@@ -33,3 +33,14 @@
     width: 500px;
     background-color: #67b7f7
 }
+
+.input {
+    background-color: #67b7f7;
+    /*width: 500px;*/
+
+}
+
+.textarea {
+    background-color: #67b7f7;
+    width: 500px;
+}

@@ -8,7 +8,7 @@ import {Button} from "@mui/material";
 const ProfileChangeFrom = (props) => {
 
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={s.descriptionForm}>
             {props.error && <div className={style.formSummaryError}>
             {props.error}
         </div>}

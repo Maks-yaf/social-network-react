@@ -7,14 +7,15 @@ import MyPhoto from "../../../../assets/images/MyPhoto.jpg";
 const AddPost = (props) => {
     return (
         <div className={s.item}>
-            <img
-                src={
-                // props.profile.photos.large ||
-                //     MyPhoto ||
-                    userPhoto} alt='profile'></img>
-            <div>{props.message}</div>
+            <div className={s.message}>
+                <div className={s.main}>I would like to say that:</div>
+                {props.message}</div>
+            <div className={s.photo}>
+                <img src={MyPhoto} alt='profile'/>
+            </div>
+
             <div className={s.like}>
-                like {props.like}
+                <h7>like:</h7> {props.like}
             </div>
         </div>
     )

@@ -30,6 +30,7 @@ export const Textarea = (props) => {
                 maxWidth: '100%',
             }}>
         <TextField
+            className={s.textarea}
             fullWidth
             {...input}
             {...restProps}
@@ -45,6 +46,7 @@ export const Inputarea = (props) => {
     return <FormControl {...props}>
 
         <Input
+            className={s.input}
             {...input}
             {...restProps} />
 

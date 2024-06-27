@@ -11,3 +11,15 @@
     margin: 5px;
     color: red;
 }
+
+.userAvatar {
+    border-radius: 50px;
+}
+
+.text {
+    color: white
+}
+
+.text h7 {
+    color: #67b7f7;
+}

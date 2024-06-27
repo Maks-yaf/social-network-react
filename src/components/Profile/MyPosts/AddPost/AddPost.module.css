@@ -1,13 +1,53 @@
 
 .item { 
-    color: red;
+    color: white;
+    padding-bottom: 10px;
+    border: 2px solid #42a5f5;
+    border-radius: 20px;
+    margin: 30px;
 }
 
 .item img {
     width: 50px;
-    border-radius: 30px;
+    border-radius: 50px;
 }
 
 .like {
-    color: green;
+    color: white;
+}
+
+.like h7 {
+    color: #42a5f5;
+}
+
+
+.item {
+    display: grid;
+    width: auto;
+    margin: 0 auto;
+    height: auto;
+
+
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 100px 1fr;
+
+    grid-template-areas:
+    "n c"
+    "h c";
+}
+
+.message {
+    grid-area: c;
+    color: white;
+
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.main {
+    color: #42a5f5;
+}
+
+.photo {
+    padding: 10px
 }

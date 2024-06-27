@@ -4,6 +4,7 @@
     color: white;
     padding: 10px;
     /*background-color: #67b7f7;*/
+
 }
 
 .status .main {
@@ -17,4 +18,8 @@
 .inputarea {
     width: 100vh;
     background-color: #67b7f7;
+}
+
+.hr {
+    text-decoration: underline #42a5f5;
 }
