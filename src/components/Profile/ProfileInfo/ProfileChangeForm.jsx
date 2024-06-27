@@ -6,6 +6,7 @@ import style from '../../Common/FormsControls/FormsControls.module.css';
 import {Button} from "@mui/material";
 
 const ProfileChangeFrom = (props) => {
+
     return (
         <form onSubmit={props.handleSubmit}>
             {props.error && <div className={style.formSummaryError}>
@@ -38,19 +39,22 @@ const ProfileChangeFrom = (props) => {
                 )
             })}
             </div>
-            <div>
+            <div className={s.button}>
                 <Button
-                    onClick={() => {}}
+                    onClick={ () => {}}
                     color="primary"
                     size="small"
-                    variant="contained">
+                    variant="contained"
+                    type='submit'
+                >
                     Save
                 </Button>
-                <button onClick={() => {}}>Save default</button>
             </div>
         </form>
     )
 }
+
+
 
 const ProfileChangeFromReduxForm = reduxForm({form: 'edit-profile', destroyOnUnmount: false})(ProfileChangeFrom)
 

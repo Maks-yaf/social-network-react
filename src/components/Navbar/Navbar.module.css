@@ -1,7 +1,8 @@
 .nav {
     grid-area: n;
-    background-color: burlywood;
+    background-color: #202023;
     padding: 15px;
+    border-right: 3px solid #42a5f5;
 }
 
 .item, .active {
@@ -15,6 +16,6 @@
 }
 
 .active {
-    color: gold;
+    color: #42a5f5;
 }
 

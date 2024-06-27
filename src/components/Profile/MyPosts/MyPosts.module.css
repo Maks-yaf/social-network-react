@@ -6,3 +6,15 @@
     margin-top: 30px;
 }
 
+.postBlock .main {
+    color: #42a5f5;
+}
+
+.postTextarea {
+    width: 100vh;
+    background-color: #67b7f7
+}
+
+.button {
+    padding: 10px
+}

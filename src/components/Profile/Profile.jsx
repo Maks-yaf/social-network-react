@@ -15,7 +15,10 @@ const Profile = (props) => {
                          updatePhoto={props.updatePhoto}
                          saveProfile={props.saveProfile}
             />
-            <MyPostsContainer/>
+            {props.isOwnerID === props.userPageId
+                ? <MyPostsContainer/>
+                : null}
+
         </div>
     )
 }

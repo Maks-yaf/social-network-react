@@ -1,21 +1,35 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    color: white;
 }
 
 .dialogItems {
     padding: 10px;
+    color: #42a5f5;
 }
-
-.dialogItems .active {
-    color: gold;
-}
-
 
 .messages {
     padding: 10px;
 }
 
-.message {
-
+.dialogname p {
+    margin: 2px;
 }
+
+.navlink {
+    text-decoration: none;
+    color: white
+}
+
+.navlink:active {
+    text-decoration: none;
+    color: #42a5f5;
+}
+
+.dialogTextarea {
+    width: 500px;
+    background-color: #67b7f7
+}
+
+

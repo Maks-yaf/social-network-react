@@ -19,8 +19,7 @@ const MyPosts =props => {
     return (
 
         <div className={s.postBlock}>
-            <h4> My post </h4>
-            {/*<img src={props.profile.photos.large || userPhoto} alt='profile'/>*/}
+            <h3 className={s.main}> My post </h3>
             <PostFormRedux onSubmit={onAddPost}/>
             <div className={s.posts}>
                 {postsElement}
@@ -33,12 +32,14 @@ const PostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field name={'postTextArea'}
-                       component={Textarea}
-                       placeholder={"Hi, how are you"}
-                       validate={[required, maxLengthCreator(50)]}/>
+                <Field
+                    className={s.postTextarea}
+                    name={'postTextArea'}
+                    component={Textarea}
+                    placeholder={"Hi, how are you"}
+                    validate={[required, maxLengthCreator(50)]}/>
             </div>
-            <div>
+            <div className={s.button}>
                 <Button
                     color="primary"
                     size="small"

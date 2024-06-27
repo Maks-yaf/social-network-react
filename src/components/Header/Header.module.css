@@ -1,18 +1,23 @@
 .header {
     grid-area: h;
-    background-color: greenyellow;
+    background-color: #211e1e;
+    border-bottom: 3px solid #42a5f5;
 }
 
 .header img {
-    width: 30px;
+    width: 80px;
 }
 
 .loginBlock {
     float: right;
-    color: black;
+    color: white;
+    padding: 15px;
+}
+
+.loginText {
+    color: #42a5f5;
+    text-decoration: none;
 
 }
 
-.loginBlock a{
-    color: goldenrod;
-}
+

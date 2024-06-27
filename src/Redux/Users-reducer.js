@@ -10,48 +10,8 @@ const TOGGLE_IS_FOLLOWING_IN_PROGRESS = "usersPage/TOGGLE_IS_FOLLOWING_IN_PROGRE
 
 ///DefaultState
 let initialState = {
-    users: [
-        // {
-        //     id: 1,
-        //     followed: true,
-        //     photoURL: 'https://static.vecteezy.com/system/resources/thumbnails/002/227/847/small/programmer-computer-expert-black-linear-icon-vector.jpg',
-        //     fullName: 'Maxim Yafimchyk',
-        //     status: "Junior programmer",
-        //     location:
-        //         {
-        //             city: 'Wroclaw',
-        //             country: 'Poland',
-        //
-        //         },
-        // },
-        // {
-        //     id: 2,
-        //     followed: true,
-        //     photoURL:'https://thumbs.dreamstime.com/b/facial-expression-redhead-woman-smiling-female-emotions-attractive-cartoon-character-vector-illustration-white-background-105899768.jpg',
-        //     fullName: 'Angelika Lema',
-        //     status: "Redhead girl",
-        //     location:
-        //         {
-        //             city: 'Wroclaw',
-        //             country: 'Poland',
-        //
-        //         },
-        // },
-        // {
-        //     id: 3,
-        //     followed: false,
-        //     photoURL:'https://i.pinimg.com/originals/eb/42/b3/eb42b30af8dbbee64166eed52e37c87c.png',
-        //     fullName: 'Aneta Snihur',
-        //     status: "Manchester City Fan №1",
-        //     location:
-        //         {
-        //             city: 'Wroclaw',
-        //             country: 'Poland',
-        //
-        //         },
-        // },
-    ],
-    pageSize: 100,
+    users: [ ],
+    pageSize: 15,
     totalItemsCount: 1,
     currentPage: 1,
     isFetching: true,

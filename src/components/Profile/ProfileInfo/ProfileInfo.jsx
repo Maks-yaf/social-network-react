@@ -44,13 +44,9 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <div>
-                <img className={s.mainImg}
-                     src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRieAeypWa5G63Ggeofo-8B4TzCjSJd-nyH8UDV3nwK-g&s'/>
-            </div>
             <div className={s.avatar}>
                 <img src={props.profile.photos.large || userPhoto} alt='profile'/>
-                <div> {props.isOwnerID === props.userPageId
+                <div className={s.button}> {props.isOwnerID === props.userPageId
                     ? <Button
                         size="small"
                         onChange={onMainPhotoSelected}
@@ -65,7 +61,6 @@ const ProfileInfo = (props) => {
                     </Button>
                     : null}
                 </div>
-
 
                 {editMode
                     ? <ProfileChangeForm initialValues={props.profile}
@@ -88,8 +83,8 @@ const ProfileInfo = (props) => {
 const ProfileDescription = (props) => {
     return (
         <div className={s.discriptionBlock}>
-            <div>
-                <h4><b><u>My profile info:</u></b></h4>
+            <div className={s.main}>
+                <h3><b>Profile info:</b></h3>
             </div>
             <div>
                 <b>My nickname: </b>{props.profile.fullName}
@@ -124,7 +119,7 @@ const ProfileDescription = (props) => {
                 }
             </div>
             {props.isOwnerID === props.userPageId
-                ? <div>
+                ? <div className={s.button}>
                     <Button
                         color="primary"
                         size="small"

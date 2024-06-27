@@ -15,3 +15,21 @@
     padding: 5px;
     color: darkviolet;
 }
+
+.globalForm input {
+    width: 500px;
+
+}
+
+.checkBoxForm input {
+    width: 30px
+}
+
+.globalForm {
+    color: white;
+}
+
+.dialogTextarea {
+    width: 500px;
+    background-color: #67b7f7
+}

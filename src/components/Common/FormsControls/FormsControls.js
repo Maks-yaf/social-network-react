@@ -44,7 +44,9 @@ export const Inputarea = (props) => {
     const {input, meta, ...restProps} = props
     return <FormControl {...props}>
 
-        <input {...input} {...restProps} />
+        <Input
+            {...input}
+            {...restProps} />
 
     </FormControl>
 }

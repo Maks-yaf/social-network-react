@@ -22,7 +22,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <div>{messageElements}</div>
-                <b> Enter Message </b>
+                <b className={s.dialogItems}> Enter Message </b>
                 <DialogsFormRedux onSubmit={addNewMessage}/>
             </div>
         </div>
@@ -33,7 +33,9 @@ const dialogsForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field name={'dialogTextArea'}
+                <Field
+                    className={s.dialogTextarea}
+                    name={'dialogTextArea'}
                        component={Textarea}
                        validate={[required, maxLengthCreator(30)]}
                        placeholder={"Enter your message"}
@@ -54,22 +56,6 @@ const dialogsForm = (props) => {
 const DialogsFormRedux = reduxForm({form: "dialog"})(dialogsForm)
 
 export default Dialogs;
-
-
-///Старый и новый код для форм
-// <div>
-//     <textarea placeholder={"Enter your message"}
-//               onChange={onMassageChange}
-//               value={props.newMessageText}/>
-// </div>
-// <div>
-//     <button onClick={onAddMessage}>Add Message</button>
-//     <button>Remove</button>
-// </div>
-//     <DialogsForm
-//         onAddMessage={onAddMessage}
-//         onMassageChange={onMassageChange}
-//         newMessageText={props.newMessageText}/>
 
 
 

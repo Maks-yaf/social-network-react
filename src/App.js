@@ -60,7 +60,7 @@ class App extends React.Component {
                             <Route path='/login'
                                    element={<LoginPage/>}/>
                             <Route path='*'
-                                   element={<div>404 Not Found</div>}/>
+                                   element={<div style={{color: 'white'}}><h1>404 Not Found</h1></div>}/>
                         </Routes>
                     </Suspense>
                 </div>

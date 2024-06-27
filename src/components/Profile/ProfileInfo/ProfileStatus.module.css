@@ -1,10 +1,20 @@
-.haha {
+.status {
     max-width: 1000px ;
-    width: 600px;
-    color: Black;
-    /*background-color: rgb(212,175,55, 0.4);*/
+    width: 100vh;
+    color: white;
+    padding: 10px;
+    /*background-color: #67b7f7;*/
+}
+
+.status .main {
+    color: #42a5f5;
 }
 
 .haha input {
     width: 600px
+}
+
+.inputarea {
+    width: 100vh;
+    background-color: #67b7f7;
 }

@@ -33,8 +33,9 @@ const User = (props) => {
             </span>
             <span>
                 <span>
-                    <div>{props.user.name}</div>
-                    <div>{props.user.status}</div>
+                    <div>{props.user.name && <div>Nickname: {props.user.name}</div>}</div>
+                    <div>{props.user.status && <div>Status: {props.user.status}</div>}</div>
+                    <div>{props.user.id && <div>Personal UserId: {props.user.id}</div>}</div>
                 </span>
             </span>
         </div>

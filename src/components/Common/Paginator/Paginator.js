@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import s from './Paginator.module.css';
 import cn from "classnames"
+import {Button} from "@mui/material";
 
 const Paginator = (props) => {
 
@@ -19,7 +20,7 @@ const Paginator = (props) => {
     return (
         <div className={cn(s.paginator, s.test)}>
             {portionNumber > 1 &&
-            <button onClick={ () => {setPortionNumber(portionNumber-1)}}>Back</button>}
+            <Button onClick={ () => {setPortionNumber(portionNumber-1)}}>Back</Button>}
             {pages
                 .filter( p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                 .map(p => {
@@ -32,7 +33,7 @@ const Paginator = (props) => {
                         </span>
             })}
             {portionCount > portionNumber &&
-                <button onClick={ () => {setPortionNumber(portionNumber+1)}}>Forward</button>}
+                <Button onClick={ () => {setPortionNumber(portionNumber+1)}}>Forward</Button>}
         </div>
     )
 }

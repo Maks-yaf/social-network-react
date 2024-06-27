@@ -6,24 +6,28 @@ import {connect} from "react-redux";
 import {login} from "../../Redux/Auth-reducer";
 import {Navigate} from "react-router-dom";
 import s from "../../../src/components/Common/FormsControls/FormsControls.module.css"
+import {Button} from "@mui/material";
 
 const LoginForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={s.globalForm}>
             <div>
-                <Field name={'email'}
+                <Field
+                    className={s.dialogTextarea}
+                    name={'email'}
                        placeholder={'email'}
                        component={Inputarea}
                        validate={[required, maxLengthCreator(50)]}/>
             </div>
             <div>
                 <Field name={'password'}
+                       className={s.dialogTextarea}
                        placeholder={'password'}
                        type={'password'}
                        component={Inputarea}
                        validate={[required, maxLengthCreator(50)]}/>
             </div>
-            <div>
+            <div className={s.checkBoxForm}>
                 <Field name={'rememberMe'}
                        component={'input'}
                        type={'checkbox'}/>
@@ -42,7 +46,13 @@ const LoginForm = (props) => {
                 {props.error}
             </div>}
             <div>
-                <button type='submit'>LOGIN</button>
+                <Button
+                    type='submit'
+                    color="primary"
+                    size="small"
+                    variant="contained">
+                    LOGIN
+                </Button>
             </div>
         </form>
     )
@@ -62,7 +72,7 @@ const Login = (props) => {
 
     return (
         <div>
-            <h1>LOGIN</h1>
+            <h1 className={s.globalForm}>LOGIN</h1>
             <ReduxLoginForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
         </div>
 
