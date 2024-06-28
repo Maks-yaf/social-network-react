@@ -9,7 +9,7 @@ import {Button} from "@mui/material";
 
 const Dialogs = (props) => {
     let dialogsElements = props.dialogs.map((d) => <DialogItem name={d.name} key={d.id} id={d.id}/>)
-    let messageElements = props.messages.map((m, index) => <Message massage={m.message} key={m.id}/>)
+    let messageElements = props.messages.map((m) => <Message massage={m.message} key={m.id}/>)
 
     let addNewMessage = (values) => {
         props.addMessage(values.dialogTextArea)
@@ -56,6 +56,9 @@ const dialogsForm = (props) => {
 const DialogsFormRedux = reduxForm({form: "dialog"})(dialogsForm)
 
 export default Dialogs;
+
+
+
 
 
 

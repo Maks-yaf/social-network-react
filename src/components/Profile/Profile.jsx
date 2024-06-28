@@ -18,8 +18,7 @@ const Profile = (props) => {
             {props.isOwnerID === props.userPageId
                 ? <MyPostsContainer/>
                 : null}
-
-        </div>
+            </div>
     )
 }
 

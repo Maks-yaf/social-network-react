@@ -6,7 +6,6 @@ import {compose} from "redux";
 
 let mapStateToProps = (state) => {
     return {
-        newMessageText: state.dialogsPage.newMessageText,
         dialogs: state.dialogsPage.dialogs,
         messages: state.dialogsPage.messages,
     }
@@ -21,5 +20,4 @@ let mapDispatchToProps = (dispatch) => {
 
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
-    // withAuthNavigate,
 )(Dialogs);

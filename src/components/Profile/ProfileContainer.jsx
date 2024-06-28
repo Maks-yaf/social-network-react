@@ -17,9 +17,7 @@ function ProfileContainer(props) {
     useEffect(() => {
         props.profileInfo(userId)
     }, [userId]);
-    useEffect(() => {
-        props.getStatus(userId)
-    }, [userId]);
+    props.getStatus(userId);
 
     return (
         <>

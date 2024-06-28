@@ -5,19 +5,17 @@ import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
 import {Textarea} from "../../Common/FormsControls/FormsControls";
 import {Button} from "@mui/material";
-import userPhoto from "../../../assets/images/defoltAvatar.png";
 
-const MyPosts =props => {
-    let postsElement = [...props.posts,]
+const MyPosts = (props) => {
+    let postsElement = [...props.posts]
         .reverse()
-        .map((p) => <AddPost key={p.id} message={p.message} like={p.like} profile={props.profile} />)
+        .map((p) => <AddPost key={p.id} message={p.message} like={p.like} />)
 
     let onAddPost = (values) => {
         props.addPost(values.postTextArea);
     };
 
     return (
-
         <div className={s.postBlock}>
             <h3 className={s.main}> My post </h3>
             <PostFormRedux onSubmit={onAddPost}/>
@@ -52,7 +50,6 @@ const PostForm = (props) => {
         </form>
     )
 }
-
 
 const PostFormRedux = reduxForm({form: "post"})(PostForm)
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './AddPost.module.css';
-import userPhoto from "../../../../assets/images/defoltAvatar.png";
 import MyPhoto from "../../../../assets/images/MyPhoto.jpg";
 
 
